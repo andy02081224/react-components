@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentBox from '../CommentBox/index';
+import FilterableProductTable from '../FilterableProductTable/FilterableProductTable';
 
 import _ from 'lodash';
 import $ from 'jquery';
@@ -11,12 +11,12 @@ class FullPage extends React.Component {
 	render() {
 		return	(
 			<div id="fullpage">
-	    	<div className="section"><CommentBox /></div>
-	    	<div className="section">Some section1</div>
+	    	<div className="section">Homepage</div>
+	    	<div className="section"><FilterableProductTable /></div>
 	    	<div className="section">
 	    		<div className="slide"> Slide 1 </div>
     			<div className="slide"> Slide 2 </div>
-    			<div className="slide"><CommentBox /></div>
+    			<div className="slide"><FilterableProductTable /></div>
     		</div>
 	    	<div className="section">Some section2</div>
 			</div>
