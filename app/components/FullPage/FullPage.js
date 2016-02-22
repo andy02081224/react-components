@@ -4,6 +4,7 @@ import FilterableProductTable from '../FilterableProductTable/FilterableProductT
 import _ from 'lodash';
 import $ from 'jquery';
 import fullpage from 'fullpage.js';
+
 import '../../../node_modules/fullpage.js/jquery.fullPage.scss';
 
 
@@ -11,7 +12,7 @@ class FullPage extends React.Component {
 	render() {
 		return	(
 			<div id="fullpage">
-	    	<div className="section">Homepage</div>
+	    	<div className="section section-intro"><h1>Homepage</h1></div>
 	    	<div className="section"><FilterableProductTable /></div>
 	    	<div className="section">
 	    		<div className="slide"> Slide 1 </div>
