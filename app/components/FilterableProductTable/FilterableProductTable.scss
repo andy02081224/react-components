@@ -1,11 +1,18 @@
 .filterable-table {
-	font-size: 2.5rem;
+	font-size: 2rem;
 	color: black;
 	background-color: white;
 	padding: 2rem;
 	display: inline-block;
 	box-shadow: 0 0 5px 3px;
-	
+	max-height: 95%;
+	overflow: auto;
+
+	@media screen and (max-width: 530px) {
+		font-size: 1rem;
+		padding: 1rem;
+	}
+
 	&__search-bar input[type='text'] {
 		background-color: black;
 		border: none;
@@ -19,12 +26,12 @@
 	
 	&__search-bar-options {
 		text-align: left;
-		font-size: 2rem;
+		font-size: 0.8em;
 	}
 
 	&__search-bar-options input[type='checkbox'] {
-		width: 2rem;
-		height: 2rem;
+		width: 0.8em;
+		height: 0.8em;
 	}
 
 	> table {
