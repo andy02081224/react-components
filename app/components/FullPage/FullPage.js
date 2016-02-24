@@ -1,5 +1,6 @@
 import React from 'react';
 import FilterableProductTable from '../FilterableProductTable';
+import Ribbon from '../Ribbon';
 
 import _ from 'lodash';
 import $ from 'jquery';
@@ -26,15 +27,11 @@ class FullPage extends React.Component {
 			<div id="fullpage">
 	    	<div className="section section-intro"><h1>Homepage</h1></div>
 	    	<div className="section">
-
-       			<div className="ribbon-green"><span>Filterable Table (官網範例)</span></div>
-
+	    		<Ribbon title="Filterable Table (官網範例)" color="green" />
 	    		<FilterableProductTable products={this.props.filterableProductTableData} />
 	    	</div>
 	    	<div className="section">
-	    	  <div className="ribbon-wrapper-green">
-       			<div className="ribbon-green"><span>NEWS</span></div>
-       		</div>
+	    	  <Ribbon title="Hello World" color="blue" />
 	    		<div className="slide">Slide 1</div>
     			<div className="slide">Slide 2</div>
     			<div className="slide">Slide 3</div>
