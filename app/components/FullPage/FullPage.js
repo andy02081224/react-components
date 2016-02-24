@@ -27,7 +27,7 @@ class FullPage extends React.Component {
 	    	<div className="section section-intro"><h1>Homepage</h1></div>
 	    	<div className="section">
 
-       			<div className="ribbon-green"><span>Filterable Table</span></div>
+       			<div className="ribbon-green"><span>Filterable Table (官網範例)</span></div>
 
 	    		<FilterableProductTable products={this.props.filterableProductTableData} />
 	    	</div>
