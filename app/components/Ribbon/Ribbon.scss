@@ -8,8 +8,6 @@ $color-map: (
 
 
 .ribbon {
-  position: absolute;
-  top: 1rem;
   font: bold 2rem Sans-Serif;
   line-height: 1.5;
   text-align: center;
@@ -17,6 +15,7 @@ $color-map: (
   padding: 3px 0;
   width: 100%;
   box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.8);
+  margin-bottom: 2rem;
 
   @media screen and (max-width: 500px) {
     font-size: 1.5rem
@@ -32,7 +31,7 @@ $color-map: (
   	$ribbon-background-color: nth($color-hex, 1);
   	$ribbon-color: nth($color-hex, 2);
 
-  	&-#{$color-name} {
+  	&--#{$color-name} {
   		color: $ribbon-color;
   		background-color: $ribbon-background-color;
   		background-image: linear-gradient(to top, $ribbon-background-color, darken($ribbon-background-color, 15%));

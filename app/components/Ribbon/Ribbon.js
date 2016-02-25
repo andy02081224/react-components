@@ -3,7 +3,7 @@ import './Ribbon.scss';
 
 const Ribbon = (props) => {
 	return (
-		<div className={'ribbon' + (props.color ? ' ribbon-' + props.color : '')}>
+		<div className={'ribbon' + (props.color ? ' ribbon--' + props.color : '')}>
 			<span>{props.title}</span>
 		</div>
 	);
