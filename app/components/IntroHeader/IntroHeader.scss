@@ -1,0 +1,33 @@
+.intro-header {
+	position: absolute;
+	width: 90%;
+	font-size: 1rem;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	@media screen and (max-width: 680px) {
+		font-size: 0.8rem;
+		margin: 0;
+	}
+
+	&__title {
+		font-size: 4em;
+		line-height: 1.1;
+		margin: 0;
+	}
+
+	&__subtitle {
+		margin-top: 0;
+		font-size: 2em;
+	}
+
+	&__image > img{
+		width: 30em;
+
+		@media screen and (max-width: 680px) {
+			width: 20em;
+		}
+
+	}
+}
