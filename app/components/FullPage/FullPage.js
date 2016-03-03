@@ -27,7 +27,7 @@ class FullPage extends React.Component {
 		return	(
 			<div id="fullpage">
 	    	<div className="section section-intro">
-	    		<IntroHeader title="學習如何撰寫React元件" subtitle="Learning how to build react components" imgPath="./img/react-logo.svg" />
+	    		<IntroHeader title="學習如何撰寫React元件" subtitle="Learning how to build react components" />
 	    	</div>
 	    	<div className="section">
 	    		<Ribbon title="Warming up - Official tutorial" color="green" />
