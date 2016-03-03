@@ -33,13 +33,6 @@ class FullPage extends React.Component {
 	    		<Ribbon title="Warming up - Official tutorial" color="green" />
 	    		<FilterableProductTable products={this.props.filterableProductTableData} />
 	    	</div>
-	    	<div className="section">
-	    	  <Ribbon title="Hello World" color="blue" />
-	    		<div className="slide">Slide 1</div>
-    			<div className="slide">Slide 2</div>
-    			<div className="slide">Slide 3</div>
-    		</div>
-	    	<div className="section">Some section2</div>
 			</div>
 		);
 	}
