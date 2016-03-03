@@ -52,10 +52,12 @@ function getEntry(env) {
 module.exports = function() {
   console.log('NODE_ENV: ', process.env.NODE_ENV);
   var env = process.env.NODE_ENV || 'development';
+  var isDEV = (env == 'development');
 
   return {
     entry: getEntry(env),
     noInfo: true,
+    debug: isDEV,
     output: {
       path: __dirbuild,
       filename: '[name].bundle.js',
@@ -71,14 +73,15 @@ module.exports = function() {
       loaders: [{
         include: __dirapp,
         test: /\.(js|jsx)$/,
-        loaders: (env == 'production')
-          ? ['babel-loader']
-          : ['babel-loader']
+        loaders: ['babel-loader']
       }, {
         test: /\.(css|scss)$/,
         loaders: (env == 'production') 
           ? ['style', 'css?sourceMap&minimize', 'postcss', 'sass?sourceMap']
           : ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap']
+      }, {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: ['url-loader?name=image/[hash].[ext]&limit=8192', 'image-webpack-loader?bypassOnDebug=true&optimizationLevel=7']
       }]
     },
     postcss: function() {
