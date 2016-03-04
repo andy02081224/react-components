@@ -1,13 +1,13 @@
 .intro-header {
 	position: absolute;
 	width: 90%;
-	font-size: 1rem;
+	font-size: 1.5rem;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 
 	@media screen and (max-width: 680px) {
-		font-size: 0.8rem;
+		font-size: 1rem;
 		margin: 0;
 	}
 

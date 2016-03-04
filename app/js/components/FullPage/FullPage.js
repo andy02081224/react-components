@@ -7,7 +7,7 @@ import _ from 'lodash';
 import $ from 'jquery';
 import fullpage from 'fullpage.js';
 
-import '../../../node_modules/fullpage.js/jquery.fullPage.scss';
+import '../../../../node_modules/fullpage.js/jquery.fullPage.scss';
 
 
 class FullPage extends React.Component {

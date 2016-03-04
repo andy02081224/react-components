@@ -1,5 +1,5 @@
 .filterable-table {
-	font-size: 2rem;
+	font-size: 3rem;
 	color: black;
 	background-color: white;
 	padding: 2rem;
@@ -11,12 +11,12 @@
 	overflow: auto;
 
 	@media screen and (max-width: 500px) {
-		font-size: 1.7rem;
+		font-size: 2.4rem;
 		padding: 1rem;
 	}
 
 	@media screen and (max-width: 400px) {
-		font-size: 1.2rem;
+		font-size: 1.7rem;
 		padding: 1rem;
 	}
 
