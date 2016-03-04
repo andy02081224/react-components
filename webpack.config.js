@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-var __dirapp = path.resolve(__dirname, 'app');
+var __dirscripts = path.resolve(__dirname, 'app/js');
 var __dirbuild = path.resolve(__dirname, 'build');
 
 var autoprefixer = require('autoprefixer');
@@ -44,7 +44,7 @@ function getEntry(env) {
   if (env == 'development') { //only want hot reloading when in dev.
     entry.app.push('webpack-hot-middleware/client');
   }
-  entry.app.push(path.resolve(__dirapp, 'app.js'));
+  entry.app.push(path.resolve(__dirscripts, 'app.js'));
 
   return entry;
 }
@@ -66,12 +66,12 @@ module.exports = function() {
     plugins: getPlugins(env),
     module: {
       preLoaders: [{
-        include: __dirapp,
+        include: __dirscripts,
         test: /\.(js|jsx)$/,
         loaders:['eslint-loader']
       }],
       loaders: [{
-        include: __dirapp,
+        include: __dirscripts,
         test: /\.(js|jsx)$/,
         loaders: ['babel-loader']
       }, {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './IntroHeader.scss';
-import headerImageSrc from '../../img/react-logo.svg';
+import headerImageSrc from '../../../img/react-logo.svg';
 
 const IntroHeader = (props) => {
 	return (
