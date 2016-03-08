@@ -61,7 +61,7 @@ module.exports = function() {
     output: {
       path: __dirbuild,
       filename: '[name].bundle.js',
-      publicPath: ''
+      publicPath: 'http://localhost:8080/'
     },
     plugins: getPlugins(env),
     module: {
@@ -81,7 +81,7 @@ module.exports = function() {
           : ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap']
       }, {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: ['url-loader?name=image/[hash].[ext]&limit=8192', 'image-webpack-loader?bypassOnDebug=true&optimizationLevel=7']
+        loaders: ['url-loader?name=img/[hash].[ext]&limit=8192', 'image-webpack-loader?bypassOnDebug=true&optimizationLevel=7']
       }]
     },
     postcss: function() {
