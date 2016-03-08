@@ -1,0 +1,14 @@
+.content-wrapper {
+	height: calc(100% - 80px);
+
+	@media screen and (max-width: 500px) {
+		height: calc(100% - 60px);
+	}
+
+	&.vertical-centered {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
