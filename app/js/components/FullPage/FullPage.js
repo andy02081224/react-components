@@ -1,7 +1,10 @@
 import React from 'react';
-import FilterableProductTable from '../FilterableProductTable';
 import Ribbon from '../Ribbon';
 import IntroHeader from '../IntroHeader';
+import {SectionWrapper, ContentWrapper} from '../Layout';
+
+import FilterableProductTable from '../FilterableProductTable';
+import Login from '../Login';
 
 import _ from 'lodash';
 import $ from 'jquery';
@@ -26,12 +29,22 @@ class FullPage extends React.Component {
 	render() {
 		return	(
 			<div id="fullpage">
-	    	<div className="section section-intro">
+	    	<div className="section">
 	    		<IntroHeader title="學習如何撰寫React元件" subtitle="Learning how to build react components" />
 	    	</div>
 	    	<div className="section">
 	    		<Ribbon title="Warming up - Official tutorial" color="green" />
-	    		<FilterableProductTable products={this.props.filterableProductTableData} />
+	    		<ContentWrapper verticalCentered="true">
+		    		<FilterableProductTable products={this.props.filterableProductTableData} />
+	    		</ContentWrapper>
+	    	</div>
+	    	<div className="section">
+	    		<SectionWrapper fsImagePath="../../../img/login-cover-4.jpg">
+		    		<Ribbon title="Proj1 - Login" color="green" />
+		    		<ContentWrapper verticalCentered="true">
+		    			<Login />
+		    		</ContentWrapper>
+	    		</SectionWrapper>
 	    	</div>
 			</div>
 		);
