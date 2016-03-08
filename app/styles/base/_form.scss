@@ -1,0 +1,20 @@
+form {
+	overflow: auto;
+	
+	.form-group {
+		margin: 1em auto;
+	}
+
+	input {
+		line-height: 1.4;
+		padding: 0.5em 0.2em;
+	}
+
+	input.form-fullwidth {
+		width: 100%;
+	}
+
+	button[type="submit"] {
+		display: block;
+	}
+}
