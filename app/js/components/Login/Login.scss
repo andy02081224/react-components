@@ -14,6 +14,7 @@ $color-peter-river: #3498db;
 	> header {
 		position: relative;
 		padding: 1.5em 0;
+		font-size: 1.2em;
 		z-index: 5;
 	}
 
@@ -38,17 +39,27 @@ $color-peter-river: #3498db;
 		background-color: white;
 	}
 
-	&__username {
+	&__input-username {
+		width: 90%;
 		border: 1px solid $color-light-gray;
-		// border-color: black;
-		// border-bottom-color: gray;
 	}
 
-	&__password {
+	&__input-password {
+		width: 90%;
 		border: 1px solid $color-light-gray;
+	}
 
-		// border-color: black;
-		// border-top-color: gray;
+	&__other-actions {
+		> ul {
+			width: 90%;
+			margin: 0 auto;
+			padding: 0;
+			list-style: none;
+			text-align: left;
+		}
+		 a {
+		 	text-decoration: none;
+		 }
 	}
 
 	button[type="submit"] {
@@ -57,5 +68,10 @@ $color-peter-river: #3498db;
 		border: none;
 		width: 100%;
 		background-color: $color-peter-river;
+	}
+
+	@media screen and (max-width: 400px) {
+		width: 300px;
+		font-size: 1.8rem;
 	}
 }
