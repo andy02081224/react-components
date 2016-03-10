@@ -5,12 +5,15 @@ import {SectionWrapper, ContentWrapper} from '../Layout';
 
 import FilterableProductTable from '../FilterableProductTable';
 import Login from '../Login';
+import SiteHeader from '../SiteHeader';
 
 import _ from 'lodash';
 import $ from 'jquery';
 import fullpage from 'fullpage.js';
 
 import '../../../../node_modules/fullpage.js/jquery.fullPage.scss';
+
+import siteLogoPath from '../../../img/site-logo.png';
 
 
 class FullPage extends React.Component {
@@ -23,7 +26,24 @@ class FullPage extends React.Component {
 		  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
 		  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
 		  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-		]
+		],
+		siteLogoPath: siteLogoPath,
+		navItems: [{
+			name: 'Item1',
+			link: '#'
+		}, {
+			name: 'Item2',
+			link: '#'
+		}, {
+			name: 'Item3',
+			link: '#'
+		}, {
+			name: 'Item4',
+			link: '#'
+		}, {
+			name: 'Item5',
+			link: '#'
+		}]
 	};
 
 	render() {
@@ -45,6 +65,9 @@ class FullPage extends React.Component {
 		    			<Login />
 		    		</ContentWrapper>
 	    		</SectionWrapper>
+	    	</div>
+	    	<div className="section">
+	    		<SiteHeader logoPath={this.props.siteLogoPath} navItems={this.props.navItems} />
 	    	</div>
 			</div>
 		);
