@@ -40,7 +40,7 @@ class FullPage extends React.Component {
 	    	</div>
 	    	<div className="section">
 	    		<SectionWrapper fsImagePath="../../../img/login-cover-4.jpg">
-		    		<Ribbon title="Proj1 - Login" color="green" />
+		    		<Ribbon title="Proj1 - Login (UI only)" color="green" />
 		    		<ContentWrapper verticalCentered="true">
 		    			<Login />
 		    		</ContentWrapper>

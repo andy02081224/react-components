@@ -12,8 +12,8 @@ class LoginForm extends React.Component {
 		return (
 			<form action="#">
 				<div className="form-group">
-					<input type="text" placeholder="Username" className="login-box__input-username" />
-					<input type="password" placeholder="Password" className="login-box__input-password" />
+					<input type="text" placeholder="Username" className="login-box__input-username" ref="loginUsernameInput" />
+					<input type="password" placeholder="Password" className="login-box__input-password" ref="loginPasswordInput" />
 				</div>
 				<div className="form-group login-box__other-actions">
 					<ul>
@@ -28,7 +28,8 @@ class LoginForm extends React.Component {
 
 	onUserLogin(e) {
 		e.preventDefault();
-		console.log('onUserLogin');
+		alert(`username: ${this.refs.loginUsernameInput.value}
+			password: ${this.refs.loginPasswordInput.value}`);
 	}
 
 }
