@@ -67,7 +67,10 @@ class FullPage extends React.Component {
 	    		</SectionWrapper>
 	    	</div>
 	    	<div className="section">
-	    		<SiteHeader logoPath={this.props.siteLogoPath} navItems={this.props.navItems} />
+	    		<Ribbon title="Proj2 - Responsive Header" color="green" />
+	    		<ContentWrapper>
+		    		<SiteHeader siteLogoPath={this.props.siteLogoPath} siteTitle="React Components" navItems={this.props.navItems} />
+	    		</ContentWrapper>
 	    	</div>
 			</div>
 		);

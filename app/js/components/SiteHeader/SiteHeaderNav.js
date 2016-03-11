@@ -11,7 +11,7 @@ class SiteHeaderNav extends React.Component {
 		return (
 			<nav className="site-header__nav">
 				<input type="checkbox" id="site-header__menu-toggle" />
-				<label htmlFor="site-header__menu-toggle">menu</label>
+				<label htmlFor="site-header__menu-toggle"><span></span></label>
 				<ul ref="siteHeaderMenu">
 					{this.renderNavItems()}
 				</ul>

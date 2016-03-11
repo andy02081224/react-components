@@ -5,10 +5,10 @@
 		height: calc(100% - 60px);
 	}
 
-	&.vertical-centered {
+	&--vertical-centered {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-around;
 	}
 }

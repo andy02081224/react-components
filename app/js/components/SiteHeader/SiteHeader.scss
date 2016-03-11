@@ -3,6 +3,7 @@ $header-horizontal-space: 20px;
 $header-vertical-space: 10px;
 
 $color-silver: #bdc3c7;
+$color-asbestos: #7f8c8d;
 
 .site-header {
 	height: $header-height;
@@ -10,20 +11,37 @@ $color-silver: #bdc3c7;
 	padding: $header-vertical-space $header-horizontal-space;
 	font-size: 2rem;
 	position: relative;
+	color: black;
 
 	&__logo {
 		float: left;
 		height: 100%;
+	
+		a {
+			display: block;
+			height: 100%;
+			color: inherit;
+			text-decoration: none;
+		}
 
 		img {
+			vertical-align: middle;
 			height: 100%;
+		}
+
+		span {
+			vertical-align: middle;
+			// display: inline-block;
+			height: 100%;
+			font-size: 1.5em;
+			line-height: $header-height - $header-vertical-space * 2;
+			padding: 0 $header-horizontal-space / 2;
 		}
 	}
 
 	&__nav {
 		float: right;
 		height: 100%;
-		color: black;
 
 		ul{
 			display: table;
@@ -57,10 +75,73 @@ $color-silver: #bdc3c7;
 			transform: translateX(0);
 		}
 
+	}
 
+	#site-header__menu-toggle + label {
+		width: 30px;
+		height: $header-height - $header-vertical-space * 2;
 
-		@media screen and (max-width: 600px) {
+		span, span::before, span::after {
+		  display: block;
+			border-radius: 2px;
+		  height: 6px;
+		  width: 30px;
+		  background-color: $color-asbestos;
+			cursor: pointer;
+		  transition: all 500ms ease-in-out;
+		}
 
+		span {
+			position: relative;
+			top: calc(50% - 3px);
+			margin: 0 auto;
+		}
+
+		span::before, span::after {
+		  content: '';
+		  position: absolute;
+		}
+
+		span::before {
+			top: -10px;
+		} 
+
+		span::after {
+			bottom: -10px
+		}
+	}
+
+	#site-header__menu-toggle:checked + label {
+		span {
+			background-color: transparent;
+		}
+
+		span::before {
+			top: 0;
+			transform: rotate(45deg);
+		} 
+
+		span::after {
+			bottom: 0;
+			transform: rotate(-45deg);
+		} 
+	}
+	
+	@media screen and (max-width: 800px) {
+		font-size: 1.5rem;
+		padding: $header-vertical-space $header-horizontal-space / 2;
+
+		&__logo {
+			img {
+				height: 80%;
+			}
+
+			span {
+				padding: 0 $header-horizontal-space / 4;
+			}
+		}
+
+		&__nav {
 			ul {
 				position: absolute;
 				top: $header-height;
@@ -97,7 +178,5 @@ $color-silver: #bdc3c7;
 				display: block;
 			}
 		}
-		
 	}
-
 }

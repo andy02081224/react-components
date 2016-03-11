@@ -9,7 +9,7 @@ class SiteHeader extends React.Component {
 	render() {
 		return (
 			<header className="site-header">
-				<SiteHeaderLogo logoPath={this.props.logoPath} />
+				<SiteHeaderLogo siteLogoPath={this.props.siteLogoPath} siteTitle={this.props.siteTitle} />
 				<SiteHeaderNav navItems={this.props.navItems} />
 			</header>
 		);

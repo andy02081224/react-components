@@ -4,8 +4,8 @@ import './ContentWrapper.scss';
 const ContentWrapper = (props) => {
 	let verticalCentered = '';
 
-	if (props.verticalCentered.toLowerCase() == 'true') {
-		verticalCentered = ' vertical-centered';
+	if (props.verticalCentered && props.verticalCentered.toLowerCase() == 'true') {
+		verticalCentered = ' content-wrapper--vertical-centered';
 	}
 
 	return (
