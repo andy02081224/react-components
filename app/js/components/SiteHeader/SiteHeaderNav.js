@@ -1,26 +1,33 @@
 import React from 'react';
 
-const SiteHeaderNav = (props) => {
+class SiteHeaderNav extends React.Component {
+	constructor(props) {
+		super(props);
 
-	function renderNavItems() {
+		this.renderNavItems = this.renderNavItems.bind(this);
+	}
+
+	render() {
+		return (
+			<nav className="site-header__nav">
+				<input type="checkbox" id="site-header__menu-toggle" />
+				<label htmlFor="site-header__menu-toggle">menu</label>
+				<ul ref="siteHeaderMenu">
+					{this.renderNavItems()}
+				</ul>
+			</nav>
+		);
+	}
+
+	renderNavItems() {
 		var navItems = [];
 
-		props.navItems.forEach((item) => {
+		this.props.navItems.forEach((item) => {
 			navItems.push(<li><a href={item.link}>{item.name}</a></li>);
 		});
 
 		return navItems;
 	}
-
-	return (
-		<nav className="site-header__nav">
-			<input type="checkbox" id="site-header__menu-toggle" />
-			<label htmlFor="site-header__menu-toggle">menu</label>
-			<ul>
-				{renderNavItems()}
-			</ul>
-		</nav>
-	);
-};
+}
 
 export default SiteHeaderNav;
