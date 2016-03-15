@@ -32,8 +32,10 @@
     "css-loader": "^0.23.1",
     "eslint": "^1.10.3",
     "eslint-loader": "^1.2.1",
+    "exports-loader": "^0.6.3",
     "file-loader": "^0.8.5",
     "image-webpack-loader": "^1.6.3",
+    "imports-loader": "^0.6.5",
     "node-sass": "^3.4.2",
     "postcss-loader": "^0.8.0",
     "react-transform-hmr": "^1.0.2",
@@ -46,10 +48,12 @@
     "webpack-hot-middleware": "^2.6.4"
   },
   "dependencies": {
+    "es6-promise": "^3.1.2",
     "fullpage.js": "^2.7.7",
     "jquery": "^2.2.0",
     "lodash": "^4.5.0",
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "whatwg-fetch": "^0.11.0"
   }
 }
