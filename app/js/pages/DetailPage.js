@@ -1,22 +1,22 @@
 import React from 'react';
-import Ribbon from '../Ribbon';
-import IntroHeader from '../IntroHeader';
-import {SectionWrapper, ContentWrapper} from '../Layout';
+import Ribbon from '../components/Ribbon';
+import IntroHeader from '../components/IntroHeader';
+import {SectionWrapper, ContentWrapper} from '../components/Layout';
 
-import FilterableProductTable from '../FilterableProductTable';
-import Login from '../Login';
-import SiteHeader from '../SiteHeader';
+import FilterableProductTable from '../components/FilterableProductTable';
+import Login from '../components/Login';
+import SiteHeader from '../components/SiteHeader';
 
 import _ from 'lodash';
 import $ from 'jquery';
 import fullpage from 'fullpage.js';
 
-import '../../../../node_modules/fullpage.js/jquery.fullPage.scss';
+import '../../../node_modules/fullpage.js/jquery.fullPage.scss';
 
-import siteLogoPath from '../../../img/site-logo.png';
+import siteLogoPath from '../../img/site-logo.png';
 
 
-class FullPage extends React.Component {
+class DetailPage extends React.Component {
 	// Demo data
 	static defaultProps = {
 		filterableProductTableData:  [
@@ -72,6 +72,9 @@ class FullPage extends React.Component {
 		    		<SiteHeader siteLogoPath={this.props.siteLogoPath} siteTitle="React Components" navItems={this.props.navItems} />
 	    		</ContentWrapper>
 	    	</div>
+	    	<div className="section">
+	    		<Ribbon title="Proj3 - Login (Basic flow)" color="green" />
+	    	</div>
 			</div>
 		);
 	}
@@ -95,4 +98,4 @@ class FullPage extends React.Component {
 	}
 }
 
-export default FullPage;
+export default DetailPage;

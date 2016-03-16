@@ -1,4 +1,5 @@
 import React from 'react';
+import auth from '../../util/auth';
 
 class LoginForm extends React.Component {
 
@@ -28,8 +29,22 @@ class LoginForm extends React.Component {
 
 	onUserLogin(e) {
 		e.preventDefault();
-		alert(`username: ${this.refs.loginUsernameInput.value}
-			password: ${this.refs.loginPasswordInput.value}`);
+		let username = this.refs.loginUsernameInput.value;
+		let password = this.refs.loginPasswordInput.value;
+
+		alert(`username: ${username}
+			password: ${password}`);
+
+		auth.login(username, password)
+			.then((response) =>  {
+				if (response.authenticated) {
+					alert('authenticated');
+				}
+				else {
+					alert('not authenticated');
+				}
+			})
+			.catch();
 	}
 
 }

@@ -42,7 +42,7 @@ function getPlugins(env) {
 function getEntry(env) {
   var entry = {
     app: [],
-    vendor: ['react', 'jquery', 'fullpage.js']
+    vendor: ['react', 'react-router', 'jquery', 'fullpage.js']
   };
 
   if (env == 'development') { //only want hot reloading when in dev.
