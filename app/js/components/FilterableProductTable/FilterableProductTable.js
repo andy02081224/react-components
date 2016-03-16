@@ -4,22 +4,28 @@ import ProductTable from './ProductTable';
 import './FilterableProductTable.scss';
 
 class FilterableProductTable extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
+			data: [],
 			filterText: '',
 			inStockOnly: false
 		};
 	}
 
-	render() {
-		return (
-			<div className="filterable-table">
-				<SearchBar className="filterable-table" filterText={this.state.filterText} inStockOnly={this.state.inStockOnly} onUserInput={this.handleUserInput.bind(this)} />
-				<ProductTable filterText={this.state.filterText} inStockOnly={this.state.inStockOnly} products={this.props.products}/>
-			</div>
-		);
+	componentDidMount() {
+		fetch(this.props.url)
+			.then((response) => {
+				return response.json();
+			})
+			.then((json) => {
+				console.log(json);
+				this.setState({ data: json });
+			})
+			.catch((e) => {
+				console.log('Parse json failed:', e);
+			});
 	}
 
 	handleUserInput(filterText, inStockOnly) {
@@ -28,6 +34,16 @@ class FilterableProductTable extends React.Component {
 			inStockOnly: inStockOnly
 		});
 	}
+
+	render() {
+		return (
+			<div className="filterable-table">
+				<SearchBar className="filterable-table" filterText={this.state.filterText} inStockOnly={this.state.inStockOnly} onUserInput={this.handleUserInput.bind(this)} />
+				<ProductTable filterText={this.state.filterText} inStockOnly={this.state.inStockOnly} products={this.state.data}/>
+			</div>
+		);
+	}
+
 }
 
 export default FilterableProductTable;
