@@ -20,7 +20,6 @@ class FilterableProductTable extends React.Component {
 				return response.json();
 			})
 			.then((json) => {
-				console.log(json);
 				this.setState({ data: json });
 			})
 			.catch((e) => {
