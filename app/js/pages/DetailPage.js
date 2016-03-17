@@ -11,8 +11,11 @@ import _ from 'lodash';
 import $ from 'jquery';
 import fullpage from 'fullpage.js';
 
+// styles
 import '../../../node_modules/fullpage.js/jquery.fullPage.scss';
 
+// Image path
+import loginBgImagePath from '../../img/login-cover-4.jpg';
 import siteLogoPath from '../../img/site-logo.png';
 
 
@@ -51,7 +54,7 @@ class DetailPage extends React.Component {
 	    		</ContentWrapper>
 	    	</div>
 	    	<div className="section">
-	    		<SectionWrapper fsImagePath="../../../img/login-cover-4.jpg">
+	    		<SectionWrapper fsImagePath={ loginBgImagePath }>
 		    		<Ribbon title="Proj1 - Login (UI only)" color="green" />
 		    		<ContentWrapper verticalCentered="true">
 		    			<Login />

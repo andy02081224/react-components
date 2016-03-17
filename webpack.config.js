@@ -33,6 +33,9 @@ function getPlugins(env) {
       }));
       plugins.push(new CopyWebpackPlugin([{
         from: 'app/index.html'
+      }, {
+        from: 'app/data',
+        to: 'data'
       }]));
   }
 
@@ -65,7 +68,7 @@ module.exports = function() {
     output: {
       path: __dirbuild,
       filename: '[name].bundle.js',
-      publicPath: 'http://localhost:8080/'
+      publicPath: ''
     },
     plugins: getPlugins(env),
     module: {
