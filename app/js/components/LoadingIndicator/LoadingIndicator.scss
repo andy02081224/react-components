@@ -1,0 +1,52 @@
+$indicator-size: 40px;
+$indicator-thickness: 6px;
+
+.loading-indicator {
+  display: inline-block;
+  width: $indicator-size;
+  height: $indicator-size;
+  border-radius: 50%;
+  background-color: transparent;
+  border-width: $indicator-thickness;
+  border-style: solid;
+  border-color: currentColor transparent transparent transparent;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    animation-timing-function: ease-out;
+    transform: rotate(0);
+  }
+  
+  25% {
+    border-right-color: currentColor;
+  }
+  
+  37.5% {
+    border-bottom-color: currentColor;
+  }
+  
+  50% {
+    animation-timing-function: ease-in-out;
+    transform: rotate(180deg);
+    border-left-color:  currentColor;
+  }
+  
+  62.5% {
+    border-left-color: transparent;
+  }
+  
+  75% {
+    border-bottom-color: transparent;
+    
+  }
+  
+  87.5% {
+    border-right-color: transparent;
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}

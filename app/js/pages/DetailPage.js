@@ -54,18 +54,18 @@ class DetailPage extends React.Component {
 	    		</ContentWrapper>
 	    	</div>
 	    	<div className="section">
+	    		<Ribbon title="Proj1 - Responsive Header" color="green" />
+	    		<ContentWrapper>
+		    		<SiteHeader siteLogoPath={this.props.siteLogoPath} siteTitle="React Components" navItems={this.props.navItems} />
+	    		</ContentWrapper>
+	    	</div>
+	    	<div className="section">
 	    		<SectionWrapper fsImagePath={ loginBgImagePath }>
-		    		<Ribbon title="Proj1 - Login (UI only)" color="green" />
+		    		<Ribbon title="Proj2 - Login (Basic flow)" color="green" />
 		    		<ContentWrapper verticalCentered="true">
 		    			<Login />
 		    		</ContentWrapper>
 	    		</SectionWrapper>
-	    	</div>
-	    	<div className="section">
-	    		<Ribbon title="Proj2 - Responsive Header" color="green" />
-	    		<ContentWrapper>
-		    		<SiteHeader siteLogoPath={this.props.siteLogoPath} siteTitle="React Components" navItems={this.props.navItems} />
-	    		</ContentWrapper>
 	    	</div>
 	    	<div className="section">
 	    		<Ribbon title="Proj3 - Login (Basic flow)" color="green" />
