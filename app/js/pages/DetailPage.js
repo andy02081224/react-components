@@ -3,9 +3,11 @@ import Ribbon from '../components/Ribbon';
 import IntroHeader from '../components/IntroHeader';
 import {SectionWrapper, ContentWrapper} from '../components/Layout';
 
+// Demo components
 import FilterableProductTable from '../components/FilterableProductTable';
-import Login from '../components/Login';
 import SiteHeader from '../components/SiteHeader';
+import Login from '../components/Login';
+import Weather from '../components/Weather';
 
 import _ from 'lodash';
 import $ from 'jquery';
@@ -68,7 +70,8 @@ class DetailPage extends React.Component {
 	    		</SectionWrapper>
 	    	</div>
 	    	<div className="section">
-	    		<Ribbon title="Proj3 - Login (Basic flow)" color="green" />
+	    		<Ribbon title="Proj3 - Weather Widget" color="green" />
+	    		<Weather />
 	    	</div>
 			</div>
 		);
@@ -79,7 +82,8 @@ class DetailPage extends React.Component {
 			wetAsphalt: '#34495e',
 			peterRiver: '#3498db',
 			carrot: '#e67e22',
-			greenSea: '#16a085'
+			greenSea: '#16a085',
+			midnightBlue: '#2c3e50'
 		};
 
 		$('#fullpage').fullpage({
