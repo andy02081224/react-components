@@ -1,12 +1,10 @@
 import React from 'react';
-import WeatherToday from './WeatherToday';
-import WeatherFiveDay from './WeatherFiveDay';
 
 const WeatherInfo = (props) => {
 	return (
-		<div>
-			<WeatherToday />
-			<WeatherFiveDay />
+		<div className="weather__info">
+			<span>today tomorrow</span>
+			<span>recent</span>
 		</div>
 	);
 };

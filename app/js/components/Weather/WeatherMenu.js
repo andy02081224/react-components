@@ -2,7 +2,7 @@ import React from 'react';
 
 const WeatherMenu = (props) => {
 	return (
-		<div>WeatherMenu</div>
+		<div className="weather__menu" onClick={props.onSettingsClicked}>WeatherMenu</div>
 	);
 };
 
