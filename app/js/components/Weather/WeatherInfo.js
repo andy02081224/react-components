@@ -5,13 +5,13 @@ const WeatherInfo = (props) => {
 		<div className="weather__info">
 			<section className="weather__info-today-tomorrow">
 				<div className="weather__info-today">
-					<div className="weather-icon">Sunny</div>
+					<div className="weather-icon"><i className="wi wi-day-storm-showers"></i>Sunny</div>
 					<span>18°C</span>
 					<span>18:00</span>
 					<span>80%</span>
 				</div>
 				<div className="weather__info-tomorrow">
-					<div className="weather-icon">Sunny</div>
+					<div className="weather-icon"><i className="wi wi-day-sunny"></i>Sunny</div>
 					<span>18°C</span>
 					<span>18:00</span>
 					<span>80%</span>
