@@ -1,6 +1,9 @@
 // global files
 @import 'global/variables';
 
+// vendor files
+@import 'vendor/mq';
+
 // base files
 @import 'base/normalize';
 @import 'base/layout';
