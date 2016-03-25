@@ -1,14 +1,15 @@
 $color-clouds: #ecf0f1;
 $color-silver: #bdc3c7;
+$color-asbestos: #7f8c8d;
 
 .weather {
-	border: 1px solid white;
-	max-width: 550px;
+	width: 550px;
 	position: relative;
 	perspective: 800px;
-	min-height: 300px;
+	min-height: 320px;
+	display: inline-block;
 	color: black;
-	margin: 0 auto;
+	font-size: 2rem;
 	
 	&__panel-wrapper {
 		position: absolute;
@@ -16,6 +17,9 @@ $color-silver: #bdc3c7;
 		height: 100%;
 		transform-style: preserve-3d;
 		transition: transform 1s;
+		// border-radius: 10px;
+		box-shadow: 0 0 3px 3px darken($color-asbestos, 20%);
+		// overflow: hidden;
 	}
 
 	&__panel-wrapper--flipped {
@@ -30,7 +34,7 @@ $color-silver: #bdc3c7;
 	}
 
 	&__panel--main {
-	background-color: $color-clouds;
+	
 	}
 
 	&__panel--settings {
@@ -46,7 +50,20 @@ $color-silver: #bdc3c7;
 		width: 40%;
 		height: 50px;
 		line-height: 50px;
+		font-size: 24px;
 		border-bottom: 1px solid $color-silver;
+		padding: 0 10px;
+	}
+
+	&__menu-location {
+		height: 100%;
+		float: left;
+	}
+
+	&__menu-settings {
+		height: 100%;
+		float: right;
+		cursor: pointer;
 	}
 	
 	/* weather information */
@@ -56,16 +73,21 @@ $color-silver: #bdc3c7;
 
 
 		.weather-icon ~ span:first-of-type {
-			float: left;
+			width: 50%;
+			display: inline-block;
+			text-align: left;
 		}
 
-		.weather-icon ~ span:nth-of-type(3) {
-			float: right;
+		.weather-icon ~ span:nth-of-type(2) {
+			width: 50%;
+			display: inline-block;
+			text-align: right;
 		}
 	}
 
 	&__info-today-tomorrow {
 		height: 60%;
+		background-color: $color-clouds;
 
 		.weather-icon {
 			line-height: 2;
@@ -75,10 +97,15 @@ $color-silver: #bdc3c7;
 	&__info-today {
 		display: inline-block;
 		width: 60%;
-		padding: 0 30px;
+		padding: 0 15px;
 
 		.weather-icon {
-			font-size: 46px;
+			font-size: 1.3em;
+			padding-bottom: 0.6em;
+		}
+
+		.weather-icon > .wi {
+			font-size: 2.6em;
 		}
 	}
 
@@ -86,17 +113,23 @@ $color-silver: #bdc3c7;
 		display: inline-block;
 		width: 40%;
 		height: 100%;
-		padding: calc(20px + 50px) 30px 0 30px;
+		padding: calc(15px + 50px) 15px 0 15px;
 		border-left: 1px solid $color-silver;
 
 		.weather-icon {
-			font-size: 36px;
+			font-size: 1.1em;
+			padding-bottom: 0.3em;
+		}
+
+		.weather-icon > .wi {
+			font-size: 2.2em;
 		}
 	}
 
 	&__info-recent {
 		border-top: 1px solid $color-silver;
 		height: 40%;
+		background-color: rgba($color-clouds, 0.8);
 
 		ul {
 			width: 100%;
@@ -116,6 +149,16 @@ $color-silver: #bdc3c7;
 			display: inline-block;
 			width: 33%;
 			vertical-align: middle;
+			padding: 0 15px;
+		}
+
+		.weather-icon {
+			font-size: 0.8em;
+			padding-bottom: 0.8em;
+		}
+
+		.weather-icon > .wi {
+			font-size: 2.2em;
 		}
 	}
 }
