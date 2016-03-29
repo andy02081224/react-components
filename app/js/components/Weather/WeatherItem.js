@@ -7,7 +7,8 @@ const WeatherItem = function(props) {
 			time: '',
 			weather: '',
 			temperature: '',
-			clouds: ''
+			clouds: '',
+			timestamp: ''
 		};
 
 		return (		
@@ -21,7 +22,7 @@ const WeatherItem = function(props) {
 					<br />
 					<i className="wi wi-fw wi-cloud"></i>&nbsp;{props.clouds + '%'}
 				</span>
-				<span>{props.date}<br />{props.time}</span>
+				<span onClick={props.onTimeClicked} data-timestamp={props.timestamp}>{props.date}<br />{props.time}</span>
 			</div>
 		);
 };

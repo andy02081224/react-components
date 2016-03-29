@@ -8,7 +8,7 @@ import { round } from 'lodash';
 
 const WeatherInfo = function(props) {
   console.log('WeatherInfo:', props.weatherData);
-  
+
 	WeatherInfo.defaultProps = {
 	  weatherData: []
 	};
@@ -27,6 +27,8 @@ const WeatherInfo = function(props) {
 					temperature={round(dataPoint.main.temp, 0)}
 					icon={dataPoint.weather[0].icon}
 					units={props.units == 'metric' ? '°C' : '°F'}
+					onTimeClicked={props.onTimeClicked}
+					timestamp={dataPoint.dt}
 					clouds={dataPoint.clouds.all}>
 				</WeatherItem>
       );
