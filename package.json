@@ -52,6 +52,7 @@
     "fullpage.js": "^2.7.7",
     "jquery": "^2.2.0",
     "lodash": "^4.5.0",
+    "moment": "^2.12.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.1",

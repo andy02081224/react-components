@@ -70,7 +70,19 @@ $color-asbestos: #7f8c8d;
 	&__info {
 		width: 100%;
 		height: 100%;
+		
+		.weather-icon {
+			display: block;
+		}
 
+		.weather-icon > img {
+			vertical-align: middle;
+		}
+
+		.weather-icon > label {
+			display: inline-block;
+			vertical-align: middle;
+		}
 
 		.weather-icon ~ span:first-of-type {
 			width: 50%;

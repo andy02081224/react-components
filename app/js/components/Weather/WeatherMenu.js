@@ -9,7 +9,7 @@ const WeatherMenu = (props) => {
 		<div className="weather__menu">
 			<div className="weather__menu-location">
 				<img height="45%" src={pinIconPath} alt="" />
-				<span>Taipei</span>
+				<span>{props.cityName}</span>
 			</div>
 			<div className="weather__menu-settings" onClick={props.onSettingsClicked}>
 				<img height="45%" src={settingsIconPath} alt="" />
