@@ -120,6 +120,7 @@ class Weather extends React.Component {
   }
 
   flipPanel() {
+  	console.log('flip panel');
     this.refs.panelWrapper.classList.toggle('weather__panel-wrapper--flipped');
   }
 

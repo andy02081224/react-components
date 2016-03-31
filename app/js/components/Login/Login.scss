@@ -42,11 +42,13 @@ $color-peter-river: #3498db;
 	&__input-username {
 		width: 90%;
 		border: 1px solid $color-light-gray;
+		padding: 10px 5px;
 	}
 
 	&__input-password {
 		width: 90%;
 		border: 1px solid $color-light-gray;
+		padding: 10px 5px;
 	}
 
 	&__other-actions {

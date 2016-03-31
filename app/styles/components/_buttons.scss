@@ -1,0 +1,38 @@
+.button {
+	padding: 6px 12px;
+	background-color: $color-clouds;
+	border: 1px solid $color-concrete;
+	border-radius: 3px; 
+}
+
+.button:hover {
+	background-color: $color-green-sea;
+	color: white;
+}
+
+.button-group {
+
+	.button {
+		border-radius: 0
+	}
+
+	.button--selected {
+		background-color: $color-green-sea;
+		color: white;
+	}
+
+	.button:first-of-type {
+		border-radius: 3px 0 0 3px;
+		border-right-width: 0; 
+	}
+
+	.button:last-of-type {
+		border-radius:  0 3px 3px 0;
+
+	}
+
+	.button:not(:first-of-type):not(:last-of-type) {
+		border-right-width: 0;
+	}
+
+}

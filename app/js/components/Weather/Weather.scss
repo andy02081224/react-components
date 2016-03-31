@@ -17,13 +17,15 @@ $color-asbestos: #7f8c8d;
 		height: 100%;
 		transform-style: preserve-3d;
 		transition: transform 1s;
-		// border-radius: 10px;
 		box-shadow: 0 0 3px 3px darken($color-asbestos, 20%);
-		// overflow: hidden;
 	}
 
 	&__panel-wrapper--flipped {
 		transform: rotateY( 180deg );
+	
+		.weather__panel--main {
+			z-index: -5;
+		}
 	}
 
 	&__panel {
@@ -33,15 +35,40 @@ $color-asbestos: #7f8c8d;
 		backface-visibility: hidden;
 	}
 
+	/* settings panel */
+	&__panel--settings {
+		padding: 20px;
+		background-color: $color-clouds;
+		transform: rotateY(180deg);
+		text-align: left;
+	}
+
+	&__settings-header {
+		padding-left: 2px;
+		padding-bottom: 3px;
+		margin-bottom: 8px;
+		display: block;
+		width: 100%;
+		border-bottom: 1px solid $color-silver;
+	}
+	
+	&__settings-back-btn {
+		display: inline-block;
+		cursor: pointer;
+	}
+
+	#weather__settings-location-custom {
+		
+		input[type="text"] {
+
+		}
+	}
+
+	/* main panel */
 	&__panel--main {
 	
 	}
 
-	&__panel--settings {
-		background-color: $color-silver;
-		transform: rotateY(180deg);
-	}
-	
 	/* weather menu */
 	&__menu {
 		position: absolute;
@@ -85,13 +112,13 @@ $color-asbestos: #7f8c8d;
 		}
 
 		.weather-icon ~ span:first-of-type {
-			width: 50%;
+			width: 55%;
 			display: inline-block;
 			text-align: left;
 		}
 
 		.weather-icon ~ span:nth-of-type(2) {
-			width: 50%;
+			width: 45%;
 			display: inline-block;
 			text-align: right;
 			cursor: pointer;
@@ -166,7 +193,7 @@ $color-asbestos: #7f8c8d;
 		}
 
 		.weather-icon {
-			font-size: 0.8em;
+			font-size: 0.75em;
 			padding-bottom: 0.8em;
 		}
 
