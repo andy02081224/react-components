@@ -1,0 +1,183 @@
+[
+  { "_id": 1668284, "name": "Taiwan", "country": "TW", "coord": { "lon": 121, "lat": 24 } },
+
+  { "_id": 7280291, "name": "Taiwan", "country": "TW", "coord": { "lon": 120.705406, "lat": 24.15114 } },
+
+  { "_id": 1668841, "name": "Siji", "country": "TW", "coord": { "lon": 121.426109, "lat": 24.48694 } },
+
+  { "_id": 1668352, "name": "Tainan", "country": "TW", "coord": { "lon": 120.188759, "lat": 23.000019 } },
+
+  { "_id": 1668355, "name": "Tainan", "country": "TW", "coord": { "lon": 120.213333, "lat": 22.990829 } },
+
+  { "_id": 1668467, "name": "Daxi", "country": "TW", "coord": { "lon": 121.290428, "lat": 24.88373 } },
+
+  { "_id": 1670029, "name": "Banqiao", "country": "TW", "coord": { "lon": 121.467194, "lat": 25.014271 } },
+
+  { "_id": 1665194, "name": "Yunlin", "country": "TW", "coord": { "lon": 120.384811, "lat": 23.70701 } },
+
+  { "_id": 1665196, "name": "Douliu", "country": "TW", "coord": { "lon": 120.543327, "lat": 23.70944 } },
+
+  { "_id": 1665357, "name": "Yujing", "country": "TW", "coord": { "lon": 120.46138, "lat": 23.124929 } },
+
+  { "_id": 6640681, "name": "Gaoqiao", "country": "TW", "coord": { "lon": 121.178329, "lat": 24.56139 } },
+
+  { "_id": 1676426, "name": "Guoxizi", "country": "TW", "coord": { "lon": 121.128304, "lat": 25.039129 } },
+
+  { "_id": 1668664, "name": "Songwu", "country": "TW", "coord": { "lon": 121.206108, "lat": 24.94389 } },
+
+  { "_id": 7280289, "name": "Kaohsiung", "country": "TW", "coord": { "lon": 120.366211, "lat": 22.634291 } },
+
+  { "_id": 1672850, "name": "Lindefu", "country": "TW", "coord": { "lon": 120.319832, "lat": 22.62184 } },
+
+  { "_id": 1668338, "name": "T’ai-pei Shih", "country": "TW", "coord": { "lon": 121.650269, "lat": 25.048611 } },
+
+  { "_id": 1668341, "name": "Taipei", "country": "TW", "coord": { "lon": 121.531853, "lat": 25.04776 } },
+
+  { "_id": 1675720, "name": "Xianeibu", "country": "TW", "coord": { "lon": 121.542473, "lat": 25.017719 } },
+
+  { "_id": 1673169, "name": "Guting", "country": "TW", "coord": { "lon": 121.51667, "lat": 25.033331 } },
+
+  { "_id": 1678375, "name": "Chikanlou", "country": "TW", "coord": { "lon": 120.199997, "lat": 23 } },
+
+  { "_id": 1665989, "name": "Chishan", "country": "TW", "coord": { "lon": 120.356468, "lat": 22.639231 } },
+
+  { "_id": 6724653, "name": "T’ai-chung Hsien", "country": "TW", "coord": { "lon": 120.909439, "lat": 24.20916 } },
+
+  { "_id": 1668399, "name": "Taichung", "country": "TW", "coord": { "lon": 120.683899, "lat": 24.1469 } },
+
+  { "_id": 1672430, "name": "Longshanli", "country": "TW", "coord": { "lon": 120.550003, "lat": 24.08333 } },
+
+  { "_id": 6748079, "name": "Zhongshanzhuang", "country": "TW", "coord": { "lon": 120.547096, "lat": 24.08016 } },
+
+  { "_id": 1670479, "name": "Pingtung", "country": "TW", "coord": { "lon": 120.614441, "lat": 22.49555 } },
+
+  { "_id": 1670481, "name": "Pingtung", "country": "TW", "coord": { "lon": 120.488136, "lat": 22.67135 } },
+
+  { "_id": 1668885, "name": "Shuiyuandi", "country": "TW", "coord": { "lon": 121.599998, "lat": 23.98333 } },
+
+  { "_id": 1669321, "name": "Shibazhang", "country": "TW", "coord": { "lon": 120.683327, "lat": 23.91667 } },
+
+  { "_id": 6949678, "name": "Taitung City", "country": "TW", "coord": { "lon": 121.144402, "lat": 22.758301 } },
+
+  { "_id": 7280290, "name": "Taipei", "country": "TW", "coord": { "lon": 121.651611, "lat": 25.025881 } },
+
+  { "_id": 1665148, "name": "Taipei", "country": "TW", "coord": { "lon": 121.581749, "lat": 24.94702 } },
+
+  { "_id": 6749202, "name": "Guizikeng", "country": "TW", "coord": { "lon": 121.443199, "lat": 25.17627 } },
+
+  { "_id": 1672557, "name": "Lugang", "country": "TW", "coord": { "lon": 120.434998, "lat": 24.05583 } },
+
+  { "_id": 6748075, "name": "Antoushan", "country": "TW", "coord": { "lon": 120.550819, "lat": 24.066059 } },
+
+  { "_id": 1677307, "name": "Zhongliao", "country": "TW", "coord": { "lon": 121.471939, "lat": 22.67417 } },
+
+  { "_id": 6658309, "name": "Zhongkangle", "country": "TW", "coord": { "lon": 121.098198, "lat": 22.7547 } },
+
+  { "_id": 1669401, "name": "Dongshan", "country": "TW", "coord": { "lon": 120.6325, "lat": 24.27306 } },
+
+  { "_id": 6643057, "name": "Xincheng", "country": "TW", "coord": { "lon": 121.605988, "lat": 24.03334 } },
+
+  { "_id": 1678813, "name": "Jiali", "country": "TW", "coord": { "lon": 121.606262, "lat": 24.021469 } },
+
+  { "_id": 1665310, "name": "Yuren", "country": "TW", "coord": { "lon": 121.542778, "lat": 22.0275 } },
+
+  { "_id": 1677314, "name": "Chonglan", "country": "TW", "coord": { "lon": 120.485023, "lat": 22.692551 } },
+
+  { "_id": 6599990, "name": "Wuyi", "country": "TW", "coord": { "lon": 120.73278, "lat": 22.041941 } },
+
+  { "_id": 1676087, "name": "Houzhuangzi", "country": "TW", "coord": { "lon": 120.662033, "lat": 24.194019 } },
+
+  { "_id": 1673046, "name": "Laodian", "country": "TW", "coord": { "lon": 120.406113, "lat": 23.4575 } },
+
+  { "_id": 1666529, "name": "Tongpanqian", "country": "TW", "coord": { "lon": 120.213608, "lat": 22.95417 } },
+
+  { "_id": 1677210, "name": "Zhongdacuo", "country": "TW", "coord": { "lon": 120.354874, "lat": 22.58102 } },
+
+  { "_id": 7280288, "name": "Fukien", "country": "TW", "coord": { "lon": 121.764221, "lat": 24.68446 } },
+
+  { "_id": 1675247, "name": "Xiguoshan", "country": "TW", "coord": { "lon": 118.349998, "lat": 24.425831 } },
+
+  { "_id": 1668630, "name": "Wucheng", "country": "TW", "coord": { "lon": 119.624107, "lat": 23.56588 } },
+
+  { "_id": 1677028, "name": "Zhuzilin", "country": "TW", "coord": { "lon": 121.549149, "lat": 25.080521 } },
+
+  { "_id": 1676453, "name": "Fuxingcun", "country": "TW", "coord": { "lon": 119.949997, "lat": 26.16667 } },
+
+  { "_id": 1670395, "name": "Pojiao", "country": "TW", "coord": { "lon": 121.223083, "lat": 25.08622 } },
+
+  { "_id": 6600589, "name": "Shalun", "country": "TW", "coord": { "lon": 120.945, "lat": 24.81361 } },
+
+  { "_id": 1670310, "name": "Buli", "country": "TW", "coord": { "lon": 120.969521, "lat": 23.966391 } },
+
+  { "_id": 1671564, "name": "Nantou", "country": "TW", "coord": { "lon": 120.92704, "lat": 23.83419 } },
+
+  { "_id": 1671566, "name": "Nantou", "country": "TW", "coord": { "lon": 120.663872, "lat": 23.915661 } },
+
+  { "_id": 1670651, "name": "Penghu", "country": "TW", "coord": { "lon": 119.611382, "lat": 23.57111 } },
+
+  { "_id": 1672228, "name": "Ma-kung", "country": "TW", "coord": { "lon": 119.586273, "lat": 23.565399 } },
+
+  { "_id": 1672551, "name": "Lugu", "country": "TW", "coord": { "lon": 120.752502, "lat": 23.746389 } },
+
+  { "_id": 1673820, "name": "Kaohsiung", "country": "TW", "coord": { "lon": 120.313332, "lat": 22.616261 } },
+
+  { "_id": 1674197, "name": "Yilan", "country": "TW", "coord": { "lon": 121.633614, "lat": 24.5425 } },
+
+  { "_id": 1674199, "name": "Yilan", "country": "TW", "coord": { "lon": 121.752998, "lat": 24.757 } },
+
+  { "_id": 1674502, "name": "Hualien", "country": "TW", "coord": { "lon": 121.393333, "lat": 23.78166 } },
+
+  { "_id": 1674504, "name": "Hualian", "country": "TW", "coord": { "lon": 121.604439, "lat": 23.97694 } },
+
+  { "_id": 1675107, "name": "Hsinchu", "country": "TW", "coord": { "lon": 121.16111, "lat": 24.67416 } },
+
+  { "_id": 1675151, "name": "Hsinchu", "country": "TW", "coord": { "lon": 120.968613, "lat": 24.80361 } },
+
+  { "_id": 1676242, "name": "Hengchun", "country": "TW", "coord": { "lon": 120.743889, "lat": 22.004169 } },
+
+  { "_id": 6724654, "name": "Keelung", "country": "TW", "coord": { "lon": 121.689873, "lat": 25.114861 } },
+
+  { "_id": 1678228, "name": "Keelung", "country": "TW", "coord": { "lon": 121.741898, "lat": 25.12825 } },
+
+  { "_id": 6696918, "name": "Taoyuan City", "country": "TW", "coord": { "lon": 121.296959, "lat": 24.993679 } },
+
+  { "_id": 7601921, "name": "Zhongxing New Village", "country": "TW", "coord": { "lon": 120.685158, "lat": 23.95908 } },
+
+  { "_id": 1667031, "name": "Touchongbu", "country": "TW", "coord": { "lon": 121.047218, "lat": 24.7775 } },
+
+  { "_id": 1667289, "name": "Dingjiaotan", "country": "TW", "coord": { "lon": 120.729721, "lat": 24.26417 } },
+
+  { "_id": 1667905, "name": "Taoyuan", "country": "TW", "coord": { "lon": 121.318703, "lat": 24.989599 } },
+
+  { "_id": 1668295, "name": "Taitung", "country": "TW", "coord": { "lon": 121.144569, "lat": 22.759911 } },
+
+  { "_id": 1668347, "name": "Taibao", "country": "TW", "coord": { "lon": 120.332222, "lat": 23.45944 } },
+
+  { "_id": 1668353, "name": "Xinying", "country": "TW", "coord": { "lon": 120.310562, "lat": 23.30694 } },
+
+  { "_id": 1668396, "name": "Fengyuan", "country": "TW", "coord": { "lon": 120.716942, "lat": 24.25 } },
+
+  { "_id": 1671971, "name": "Miaoli", "country": "TW", "coord": { "lon": 120.823669, "lat": 24.56427 } },
+
+  { "_id": 1673816, "name": "Fengshan", "country": "TW", "coord": { "lon": 120.361259, "lat": 22.626591 } },
+
+  { "_id": 1677112, "name": "Zhubei", "country": "TW", "coord": { "lon": 121.007782, "lat": 24.838329 } },
+
+  { "_id": 1678008, "name": "Jincheng", "country": "TW", "coord": { "lon": 118.318329, "lat": 24.43667 } },
+
+  { "_id": 1678836, "name": "Jiayi Shi", "country": "TW", "coord": { "lon": 120.448891, "lat": 23.47917 } },
+
+  { "_id": 1679136, "name": "Chang-hua", "country": "TW", "coord": { "lon": 120.562759, "lat": 24.073271 } },
+
+  { "_id": 7552914, "name": "Nangan", "country": "TW", "coord": { "lon": 119.932838, "lat": 26.150391 } },
+
+  { "_id": 6749251, "name": "Dongbuzi", "country": "TW", "coord": { "lon": 121.306458, "lat": 25.00996 } },
+
+  { "_id": 1673200, "name": "Guomin", "country": "TW", "coord": { "lon": 121.616669, "lat": 24 } },
+
+  { "_id": 1672222, "name": "Huiyaozi", "country": "TW", "coord": { "lon": 121.12825, "lat": 22.76885 } },
+
+  { "_id": 1676959, "name": "Erqiao", "country": "TW", "coord": { "lon": 120.366669, "lat": 22.549999 } },
+
+  { "_id": 1665988, "name": "Zhigaozhuang", "country": "TW", "coord": { "lon": 120.61602, "lat": 24.154539 } }
+]

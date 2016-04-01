@@ -3,6 +3,7 @@
 	background-color: $color-clouds;
 	border: 1px solid $color-concrete;
 	border-radius: 3px; 
+	outline: none;
 }
 
 .button:hover {
@@ -11,6 +12,7 @@
 }
 
 .button-group {
+	display: inline-block;
 
 	.button {
 		border-radius: 0

@@ -14,7 +14,10 @@ class Weather extends React.Component {
     super(props);
 
     this.state = {
-      units: 'metric',
+      settings: {
+      	units: 'metric',
+      	location: 'current'
+      },
       city: '',
       data: [],
       parsedData: []
@@ -23,28 +26,53 @@ class Weather extends React.Component {
     // Methods bindings
     this.flipPanel = this.flipPanel.bind(this);
     this.changeTime = this.changeTime.bind(this);
+    this.handleSettingsChange = this.handleSettingsChange.bind(this);
   }
 
   componentDidMount() {
     // First check if there is a previously stored configuration (localStorage)
     // If yes, load the configuration (If city is not set, still use the current position)
     // If not, get user's current position and use default settings
-    if (!navigator.geolocation) {
+    this.getCurrentPosition()
+    	.then((response) => {
+    		this.fetchWeatherData(response);
+    	})
+    	.catch((error) => {
+
+    	});
+
+  }
+
+  getCurrentPosition() {
+  	if (!navigator.geolocation) {
       alert('Your browser dose not support gelocation');
       return;
     }
 
-    navigator.geolocation.getCurrentPosition((position) => {
-      let { latitude, longitude } = position.coords;
-      this.fetchWeatherData(latitude, longitude);
-    }, null, {
-      enableHighAccuracy: true
+    return new Promise((resolve, reject) => {
+	    navigator.geolocation.getCurrentPosition((position) => {
+	      resolve(position.coords);
+	    }, null, {
+	      enableHighAccuracy: true
+	    });
     });
 
   }
 
-  fetchWeatherData(latitude, longitude) {
-    fetch(`${weatherAPI.forecast}units=${this.state.units}&lat=${latitude}&lon=${longitude}`)
+  fetchWeatherData(query) {
+  	let queryString = '';
+
+  	if (typeof query === 'string') {
+  		queryString = `q=${query}`;
+  	}
+  	else if (typeof query === 'object' && query.latitude && query.longitude) {
+  		queryString = `lat=${query.latitude}&lon=${query.longitude}`;
+  	}
+  	else {
+  		return;
+  	}
+
+    fetch(`${weatherAPI.forecast}units=${this.state.settings.units}&${queryString}`)
       .then((response) => {
         return response.json();
       })
@@ -120,7 +148,6 @@ class Weather extends React.Component {
   }
 
   flipPanel() {
-  	console.log('flip panel');
     this.refs.panelWrapper.classList.toggle('weather__panel-wrapper--flipped');
   }
 
@@ -133,12 +160,34 @@ class Weather extends React.Component {
     });
   }
 
+  handleSettingsChange(settings) {
+  	this.flipPanel();
+  	console.log('settings:', settings);
+
+  	this.setState({
+  		settings: settings
+  	});
+
+  	if (settings.location == 'current') {
+  		this.getCurrentPosition()
+  			.then((response) => {
+  				this.fetchWeatherData(response);
+  			})
+  			.catch((error) => {
+
+  			});
+  	}
+  	else {
+  		this.fetchWeatherData(settings.location);
+  	}
+  }
+
   render() {
     return (
       <div className="weather">
 				<div className="weather__panel-wrapper" ref="panelWrapper">
-					<WeatherMainPanel cityName={this.state.city} weatherData={this.state.parsedData} units={this.state.units} onSettingsClicked={this.flipPanel} onTimeClicked={this.changeTime} />
-					<WeatherSettingsPanel onBackClicked={this.flipPanel} />
+					<WeatherMainPanel cityName={this.state.city} weatherData={this.state.parsedData} units={this.state.settings.units} onSettingsClicked={this.flipPanel} onTimeClicked={this.changeTime} />
+					<WeatherSettingsPanel settings={this.state.settings} onSettingsChange={this.handleSettingsChange} />
 				</div>
 			</div>
     );

@@ -74,7 +74,7 @@ $color-asbestos: #7f8c8d;
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: 40%;
+		width: 45%;
 		height: 50px;
 		line-height: 50px;
 		font-size: 24px;
@@ -136,7 +136,7 @@ $color-asbestos: #7f8c8d;
 
 	&__info-today {
 		display: inline-block;
-		width: 60%;
+		width: 55%;
 		padding: 0 15px;
 
 		.weather-icon {
@@ -151,7 +151,7 @@ $color-asbestos: #7f8c8d;
 
 	&__info-tomorrow {
 		display: inline-block;
-		width: 40%;
+		width: 45%;
 		height: 100%;
 		padding: calc(15px + 50px) 15px 0 15px;
 		border-left: 1px solid $color-silver;
@@ -169,7 +169,7 @@ $color-asbestos: #7f8c8d;
 	&__info-recent {
 		border-top: 1px solid $color-silver;
 		height: 40%;
-		background-color: rgba($color-clouds, 0.8);
+		background-color: rgba($color-clouds, 0.5);
 
 		ul {
 			width: 100%;
