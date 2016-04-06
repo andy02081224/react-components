@@ -1,5 +1,5 @@
 import React from 'react';
-import { groupBy, findIndex } from 'lodash';
+import { groupBy, findIndex, extend } from 'lodash';
 import moment from 'moment';
 
 import WeatherMainPanel from './WeatherMainPanel';
@@ -20,7 +20,8 @@ class Weather extends React.Component {
       },
       city: '',
       data: [],
-      parsedData: []
+      parsedData: [],
+      cityList: []
     };
 
     // Methods bindings
@@ -30,20 +31,29 @@ class Weather extends React.Component {
   }
 
   componentDidMount() {
+    this.fetchCityList();
+
     // First check if there is a previously stored configuration (localStorage)
-    // If yes, load the configuration (If city is not set, still use the current position)
+    if (localStorage.getItem('weatherSettings')) {
+      // If yes, load the configuration
+      let storedSettings = JSON.parse(localStorage.getItem('weatherSettings'));
+      console.log('storedSettings: ', storedSettings);
+      this.fetchWeatherData(storedSettings.location, storedSettings);
+    }
+    else {
     // If not, get user's current position and use default settings
     this.getCurrentPosition()
     	.then((response) => {
     		this.fetchWeatherData(response);
     	})
     	.catch((error) => {
-
+        console.log('Error fetchWeatherData:', error);
     	});
+    }
 
   }
 
-  getCurrentPosition() {
+  getCurrentPosition(enableHighAccuracy = true) {
   	if (!navigator.geolocation) {
       alert('Your browser dose not support gelocation');
       return;
@@ -53,36 +63,64 @@ class Weather extends React.Component {
 	    navigator.geolocation.getCurrentPosition((position) => {
 	      resolve(position.coords);
 	    }, null, {
-	      enableHighAccuracy: true
+	      enableHighAccuracy: enableHighAccuracy
 	    });
     });
 
   }
 
-  fetchWeatherData(query) {
-  	let queryString = '';
+  fetchWeatherData(location, settings = this.state.settings) {
+  	let locationString = '';
 
-  	if (typeof query === 'string') {
-  		queryString = `q=${query}`;
+    // Determine location fomat: city ID or geographic coordinates
+  	if (typeof location === 'string' && isNaN(location)) {
+  		locationString = `q=${location}`;
   	}
-  	else if (typeof query === 'object' && query.latitude && query.longitude) {
-  		queryString = `lat=${query.latitude}&lon=${query.longitude}`;
+    else if (typeof location === 'string' && !isNaN(location) || typeof location === 'number') {
+      locationString = `id=${location}`;
+    }
+  	else if (typeof location === 'object' && location.latitude && location.longitude) {
+  		locationString = `lat=${location.latitude}&lon=${location.longitude}`;
   	}
   	else {
   		return;
   	}
 
-    fetch(`${weatherAPI.forecast}units=${this.state.settings.units}&${queryString}`)
+    fetch(`${weatherAPI.forecast}units=${settings.units}&${locationString}`)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
+        console.log('fetchWeatherData settings:', settings);
+        console.log('raw data:', data);
         let parsedData = this.parseData(data.list);
 
         this.setState({
+          settings: settings,
           city: data.city.name,
           data: data.list,
           parsedData: parsedData
+        });
+      })
+      .catch((error) => {
+        console.log('Parse json failed:', error);
+      });
+  }
+
+  fetchCityList() {
+    fetch(weatherAPI.cityList)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let cityList = data.map((item) => {
+          return {
+            id: item._id,
+            name: item.name
+          };
+        });
+        this.setState({
+          cityList: cityList
         });
       })
       .catch((error) => {
@@ -161,24 +199,27 @@ class Weather extends React.Component {
   }
 
   handleSettingsChange(settings) {
-  	this.flipPanel();
-  	console.log('settings:', settings);
+  	// this.flipPanel();
 
-  	this.setState({
-  		settings: settings
-  	});
+    let newSettings = extend(this.state.settings, settings);
 
-  	if (settings.location == 'current') {
+    this.setState({
+      settings: newSettings
+    });
+
+  	localStorage.setItem('weatherSettings', JSON.stringify(newSettings));
+
+  	if (newSettings.location == 'current') {
   		this.getCurrentPosition()
   			.then((response) => {
-  				this.fetchWeatherData(response);
+  				this.fetchWeatherData(response, newSettings);
   			})
   			.catch((error) => {
 
   			});
   	}
   	else {
-  		this.fetchWeatherData(settings.location);
+  		this.fetchWeatherData(newSettings.location, newSettings);
   	}
   }
 
@@ -187,7 +228,7 @@ class Weather extends React.Component {
       <div className="weather">
 				<div className="weather__panel-wrapper" ref="panelWrapper">
 					<WeatherMainPanel cityName={this.state.city} weatherData={this.state.parsedData} units={this.state.settings.units} onSettingsClicked={this.flipPanel} onTimeClicked={this.changeTime} />
-					<WeatherSettingsPanel settings={this.state.settings} onSettingsChange={this.handleSettingsChange} />
+					<WeatherSettingsPanel settings={this.state.settings} onSettingsChange={this.handleSettingsChange} onBackClicked={this.flipPanel} cityList={this.state.cityList} />
 				</div>
 			</div>
     );

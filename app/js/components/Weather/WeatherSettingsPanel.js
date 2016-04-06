@@ -6,42 +6,45 @@ import WeatherSettingsForm from './WeatherSettingsForm';
 class WeatherSettingsPanel extends React.Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			units: this.props.settings.units,
-			location: this.props.settings.location,
-			city: ''
-		};
-
+		// this.state = {
+		// 	units: this.props.settings.units,
+		// 	location: this.props.settings.location
+		// };
+		
 		this.handleUnitsChange = this.handleUnitsChange.bind(this);
 		this.handleLocationChange = this.handleLocationChange.bind(this);
-		this.handleSettingsChange = this.handleSettingsChange.bind(this);
+		this.handleBackButtonClicked = this.handleBackButtonClicked.bind(this);
 	}
 
 	handleUnitsChange(event) {
 		event.preventDefault();
-
-		this.setState({
-			units: event.target.getAttribute('data-unit')
+		console.log('unit change:', event.target.getAttribute('data-unit'));
+		let newUnit = event.target.getAttribute('data-unit');
+		this.props.onSettingsChange({
+			units: newUnit
 		});
 	}
 
 	handleLocationChange(event) {
 		// let customLocation = event.target.nextSibling.querySelector('input[type="text"]').value;
-		this.setState({
-			location: event.target.value
+		console.log('location change:', event.target.value);
+		let newLocation = event.target.value;
+
+		this.props.onSettingsChange({
+			location: newLocation
 		});
 	}
 
-	handleSettingsChange() {
-		this.props.onSettingsChange(this.state);
+	handleBackButtonClicked() {
+		this.props.onBackClicked();
 	}
 
 	render() {
+		console.log('WeatherSettingsPanel:', this.props.settings);
 		return (
 			<div className="weather__panel  weather__panel--settings">
-				<WeatherSettingsBackButton onBackClicked={this.handleSettingsChange} />
-				<WeatherSettingsForm units={this.state.units} location={this.state.location} onUnitsChange={this.handleUnitsChange} onLocationChange={this.handleLocationChange} />
+				<WeatherSettingsBackButton onBackClicked={this.handleBackButtonClicked} />
+				<WeatherSettingsForm units={this.props.settings.units} location={this.props.settings.location} cityList={this.props.cityList} onUnitsChange={this.handleUnitsChange} onLocationChange={this.handleLocationChange} />
 			</div>
 		);
 	}

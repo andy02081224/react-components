@@ -1,6 +1,10 @@
 import React from 'react';
 
-const WeatherSettingsUnits = function(props) {
+const WeatherSettingsForms = function(props) {
+	let cityOptions = props.cityList.map((city) => {
+		return <option key={city.id} value={city.id}>{city.name}</option>;
+	});
+
 	return (
 		<form>
 			<div className="form-group">
@@ -18,10 +22,12 @@ const WeatherSettingsUnits = function(props) {
 						<label htmlFor="weather__settings-location-current">Current Location</label>
 					</div>
 					<div>
-		    		<input type="radio" id="weather__settings-location-custom" name="weather__settings-location-radio" value="custom" onChange={props.onLocationChange} checked={props.location == 'custom'} />
+		    		<input type="radio" id="weather__settings-location-custom" name="weather__settings-location-radio" value="custom" onChange={props.onLocationChange} checked={props.location != 'current'} />
 		  			<label htmlFor="weather__settings-location-custom">
 		  				<span>Custom&nbsp;</span>
-		  				<input type="text" disabled={props.location == 'current'} />
+		  				<select value={props.location} onChange={props.onLocationChange} disabled={props.location == 'current'}>
+		  					{cityOptions}
+		  				</select>
 		  			</label>
 	  			</div>	  			
   			</div>
@@ -30,4 +36,4 @@ const WeatherSettingsUnits = function(props) {
 	);
 };
 
-export default WeatherSettingsUnits;
+export default WeatherSettingsForms;

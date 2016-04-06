@@ -7,8 +7,6 @@ import WeatherItem from './WeatherItem';
 import { round } from 'lodash';
 
 const WeatherInfo = function(props) {
-  console.log('WeatherInfo:', props.weatherData);
-
 	WeatherInfo.defaultProps = {
 	  weatherData: []
 	};
