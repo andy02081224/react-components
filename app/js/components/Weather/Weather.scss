@@ -35,6 +35,16 @@ $color-asbestos: #7f8c8d;
 		backface-visibility: hidden;
 	}
 
+	&__loading-indicator {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: $color-clouds;
+	}
+
 	/* settings panel */
 	&__panel--settings {
 		padding: 20px;

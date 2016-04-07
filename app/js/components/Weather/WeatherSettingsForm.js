@@ -22,10 +22,11 @@ const WeatherSettingsForms = function(props) {
 						<label htmlFor="weather__settings-location-current">Current Location</label>
 					</div>
 					<div>
-		    		<input type="radio" id="weather__settings-location-custom" name="weather__settings-location-radio" value="custom" onChange={props.onLocationChange} checked={props.location != 'current'} />
+		    		<input type="radio" id="weather__settings-location-custom" name="weather__settings-location-radio" value="" onChange={props.onLocationChange} checked={props.location != 'current'} />
 		  			<label htmlFor="weather__settings-location-custom">
 		  				<span>Custom&nbsp;</span>
-		  				<select value={props.location} onChange={props.onLocationChange} disabled={props.location == 'current'}>
+		  				<select value={ props.location == 'current' ? 'default' : props.location } onChange={props.onLocationChange} disabled={props.location == 'current'}>
+		  					<option value="default" disabled="true">Select a city</option>
 		  					{cityOptions}
 		  				</select>
 		  			</label>
