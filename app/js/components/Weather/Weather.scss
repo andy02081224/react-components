@@ -2,11 +2,13 @@ $color-clouds: #ecf0f1;
 $color-silver: #bdc3c7;
 $color-asbestos: #7f8c8d;
 
+@import '../../../styles/vendor/mq';
+
 .weather {
 	width: 550px;
 	position: relative;
 	perspective: 800px;
-	min-height: 320px;
+	height: 320px;
 	display: inline-block;
 	color: black;
 	font-size: 2rem;
@@ -210,5 +212,102 @@ $color-asbestos: #7f8c8d;
 		.weather-icon > .wi {
 			font-size: 2.2em;
 		}
+	}
+
+	@include mq($until: 600px) {
+		width: 380px;
+		height: 450px;
+		font-size: 1.8rem;
+
+	&__settings-header {
+		padding-left: 2px;
+		margin-top: 30px;
+		margin-bottom: 15px;
+		border-bottom: 1px solid $color-silver;
+	}
+
+		&__menu {
+			position: static;
+			width: 100%;
+		}
+
+		&__info-today-tomorrow {
+			height: 160px;
+		}
+
+		&__info-today {
+			display: block;
+			width: 100%;
+			height: 50%;
+			padding: 5px 15px;
+
+			.weather-icon {
+				font-size: 1.2em;
+				padding-bottom: 0;
+			}
+		}
+
+		&__info-tomorrow {
+			display: block;
+			width: 100%;
+			height: 50%;
+			padding: 5px 15px;
+			border-top: 1px solid $color-silver;
+
+			.weather-icon {
+				font-size: 1.2em;
+				padding-bottom: 0;
+			}
+		}
+
+		&__info-recent {
+			height: 240px;
+			background-color: $color-clouds;
+			border: 0;
+
+			li {
+				display: block;
+				width: 100%;
+				height: 33%;
+				padding: 5px 15px;
+				border-top: 1px solid $color-silver;
+			}
+
+			.weather-icon {
+				font-size: 1.2em;
+				// vertical-align: middle;
+				padding-bottom: 0;
+			}
+		}
+
+		&__info {
+			height: auto;
+
+			.weather-icon {
+				display: inline-block;
+				width: 50%;
+				padding-top: 10px;
+				vertical-align: middle;
+				text-align: left;
+			}
+
+			.weather-icon ~ span:first-of-type {
+				width: 25%;
+				text-align: left;
+				padding-top: 10px;
+				vertical-align: middle;
+			}
+
+			.weather-icon ~ span:nth-of-type(2) {
+				width: 25%;
+				padding-top: 10px;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	@include mq($until: 410px) {
+		width: 300px;
+		font-size: 1.5rem;
 	}
 }

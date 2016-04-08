@@ -72,7 +72,7 @@ class DetailPage extends React.Component {
 	    	<div className="section">
 	    	  <SectionWrapper fsImagePath={ loginBgImagePath }>
 		    		<Ribbon title="Proj3 - Weather Widget" color="green" />
-		    		<ContentWrapper>
+		    		<ContentWrapper verticalCentered="true">
 			    		<Weather />
 		    		</ContentWrapper>
 	    		</SectionWrapper>
