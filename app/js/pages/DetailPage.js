@@ -26,18 +26,23 @@ class DetailPage extends React.Component {
 	static defaultProps = {
 		siteLogoPath: siteLogoPath,
 		navItems: [{
+			id: 1,
 			name: 'Item1',
 			link: '#'
 		}, {
+			id: 2,
 			name: 'Item2',
 			link: '#'
 		}, {
+			id: 3,
 			name: 'Item3',
 			link: '#'
 		}, {
+			id: 4,
 			name: 'Item4',
 			link: '#'
 		}, {
+			id: 5,
 			name: 'Item5',
 			link: '#'
 		}]

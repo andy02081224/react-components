@@ -23,7 +23,7 @@ class SiteHeaderNav extends React.Component {
 		var navItems = [];
 
 		this.props.navItems.forEach((item) => {
-			navItems.push(<li><a href={item.link}>{item.name}</a></li>);
+			navItems.push(<li key={item.id}><a href={item.link}>{item.name}</a></li>);
 		});
 
 		return navItems;
