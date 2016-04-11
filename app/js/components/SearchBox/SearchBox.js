@@ -77,11 +77,12 @@ class SearchBox extends React.Component {
 		return (
 			<div className="search-box">
 				<form method="get" target="_blank" action={activeSearchEngine} onSubmit={this.handleSubmit}>
-					<select value={activeSearchEngine} onChange={this.handleSearchEngineChange}>
+					<select className="search-box__engine-selector" value={activeSearchEngine} onChange={this.handleSearchEngineChange}>
+						<option disabled>Search engine</option>
 						{this.renderEngineOptions()}
 					</select>
-					<input type="text" name="q" ref="searchBoxTextInput" />
-					<input type="submit" value={`Search ${this.capitalizeFirstLetter(this.state.defaultSearchEngine)}`} />
+					<input type="text" className="search-box__query-input" name="q" ref="searchBoxTextInput" />
+					<input type="submit" className="search-box__submit-btn" value="Search" />
 				</form>
 			</div>
 		);

@@ -84,19 +84,18 @@ class DetailPage extends React.Component {
 	    		</SectionWrapper>
 	    	</div>
 	    	<div className="section">
-	    	  <SectionWrapper fsImagePath={ loginBgImagePath }>
-		    		<Ribbon title="Proj4 - Search box" color="green" />
-		    		<ContentWrapper verticalCentered="true">
-			    		<SearchBox />
-		    		</ContentWrapper>
-	    		</SectionWrapper>
+	    		<Ribbon title="Proj4 - Search box" color="green" />
+	    		<ContentWrapper verticalCentered="true">
+		    		<SearchBox />
+	    		</ContentWrapper>
 	    	</div>
 			</div>
 		);
 	}
 
 	componentDidMount() {
-		let sectionColors = {
+		let sectionColors = [];
+		let sectionColorMap = {
 			wetAsphalt: '#34495e',
 			peterRiver: '#3498db',
 			carrot: '#e67e22',
@@ -104,8 +103,17 @@ class DetailPage extends React.Component {
 			midnightBlue: '#2c3e50'
 		};
 
+		let numOfSections = document.getElementsByClassName('section').length;
+
+		for (let i = 0; i < numOfSections; i++) {
+			let sectionColorSet = _.values(sectionColorMap);
+			let index = i % sectionColorSet.length;
+			
+			sectionColors.push(sectionColorSet[index]);
+		}
+
 		$('#fullpage').fullpage({
-			sectionsColor: _.values(sectionColors),
+			sectionsColor: sectionColors,
 			verticalCentered: false
 		});
 	}

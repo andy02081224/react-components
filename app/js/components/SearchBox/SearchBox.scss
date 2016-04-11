@@ -1,3 +1,37 @@
+$color-peter-river: #3498db;
+$color-clouds: #ecf0f1;
+$color-button-face: #dddddd;
+
 .search-box {
 	color: black;
+	font-size: 2rem;
+
+	select, input {
+		height: 60px;
+		border: none;
+		outline: none;
+	}
+
+	&__engine-selector {
+		padding: 0 5px;
+		border-right: 1px dashed darken($color-button-face, 20%);
+	}
+
+	&__engine-selector:hover {
+		cursor: pointer;
+	}
+
+	&__query-input {
+		padding: 0 10px;
+	}
+
+	&__submit-btn {
+		padding: 0 10px;
+		background-color: $color-button-face;
+	}
+
+	&__submit-btn:hover {
+		background-color: $color-peter-river;
+		color: white;
+	}
 }
