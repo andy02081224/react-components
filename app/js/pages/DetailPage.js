@@ -8,6 +8,7 @@ import FilterableProductTable from '../components/FilterableProductTable';
 import SiteHeader from '../components/SiteHeader';
 import Login from '../components/Login';
 import Weather from '../components/Weather';
+import SearchBox from '../components/SearchBox';
 
 import _ from 'lodash';
 import $ from 'jquery';
@@ -79,6 +80,14 @@ class DetailPage extends React.Component {
 		    		<Ribbon title="Proj3 - Weather Widget" color="green" />
 		    		<ContentWrapper verticalCentered="true">
 			    		<Weather />
+		    		</ContentWrapper>
+	    		</SectionWrapper>
+	    	</div>
+	    	<div className="section">
+	    	  <SectionWrapper fsImagePath={ loginBgImagePath }>
+		    		<Ribbon title="Proj4 - Search box" color="green" />
+		    		<ContentWrapper verticalCentered="true">
+			    		<SearchBox />
 		    		</ContentWrapper>
 	    		</SectionWrapper>
 	    	</div>
